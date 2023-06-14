@@ -1,0 +1,12 @@
+body{
+    align-items: center;
+}
+
+
+.loginPage
+{
+    width:50%;
+    height: 80%;
+    background-color: blue;
+    text-align: center;
+}
