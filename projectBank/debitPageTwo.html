@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Credit</title>
+    <title>Debit</title>
     <link rel="stylesheet" href="creditPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            var form = $('#creditForm');
+            var form = $('#debitForm');
             form.submit(function(e) {
                 e.preventDefault();
                 var accountNumber = $('#accountNumber').val();
                 var accountHolderName = $('#accountHolderName').val();
                 var ifscCode = $('#ifscCode').val();
-                var amount = Number($('#amount').val()) * 1;
+                var amount = '-' + $('#amount').val();
                 if (accountNumber === '1234567890' && accountHolderName === 'Thanniru Karthik' && ifscCode === 'PNB2002') {
                     var accountDetails = {
                         accountNumber: accountNumber,
@@ -42,7 +42,7 @@
     </div>
     <br>
     <div class="middleBar">
-        <form id="creditForm">
+        <form id="debitForm">
             <label for="accountNumber">Account Number:</label>
             <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter the account number" required>
             <br><br>
@@ -53,7 +53,7 @@
             <input type="text" id="ifscCode" name="ifscCode" placeholder="Enter the IFSC code" required>
             <br><br>
             <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" placeholder="Enter the amount" required>
+            <input type="number" id="amount" name="amount" placeholder="Enter the amount to Debit" required>
             <br><br>
             <input type="submit" value="Submit">
         </form>
